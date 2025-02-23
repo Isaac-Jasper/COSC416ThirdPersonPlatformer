@@ -6,13 +6,10 @@ using UnityEngine.Events;
 
 public class InputController : MonoBehaviour {
     public static InputController instance { get; private set;}
-    public UnityEvent<Vector2> OnMove = new UnityEvent<Vector2>();
+    public UnityEvent<Vector3> OnMove = new UnityEvent<Vector3>();
     public UnityEvent OnSpacePressed = new UnityEvent();
     public UnityEvent OnDashPressed = new UnityEvent();
     public UnityEvent OnResetPressed = new UnityEvent();
-
-    [SerializeField]
-    private float moveTolerance = 0.1f;
 
     void Awake() {
         if (instance != null && instance != this) {

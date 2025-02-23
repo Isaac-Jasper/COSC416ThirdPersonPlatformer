@@ -1,8 +1,10 @@
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField] private float speed;
+    [SerializeField] 
+    private float speed;
 
+    [SerializeField]
     private Rigidbody rb;
 
     void Start() {
@@ -10,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void MovePlayer(Vector2 dir) {
+    private void MovePlayer(Vector3 dir) {
         rb.AddForce(speed * dir);
     }
 }
