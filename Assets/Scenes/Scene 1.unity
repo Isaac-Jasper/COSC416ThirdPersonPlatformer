@@ -119,6 +119,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &187771916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 187771917}
+  - component: {fileID: 187771918}
+  m_Layer: 6
+  m_Name: GroundChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &187771917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771916}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.708, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1054778851}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &187771918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187771916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a06e17ae850b41444b33adbb54b23b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.4
+  jumpMask:
+    serializedVersion: 2
+    m_Bits: 8
+  distance: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +255,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09853764, y: 0.000000048429293, z: -0.0000000047954463, w: 0.99513334}
-  m_LocalPosition: {x: 0, y: 4.84, z: -5}
+  m_LocalRotation: {x: 0.24033228, y: -2.7558562e-15, z: 6.8231945e-16, w: 0.9706907}
+  m_LocalPosition: {x: -2.02, y: 12.407574, z: -5.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,13 +429,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +471,7 @@ GameObject:
   - component: {fileID: 721057314}
   - component: {fileID: 721057313}
   - component: {fileID: 721057312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -640,7 +689,7 @@ GameObject:
   - component: {fileID: 813868201}
   - component: {fileID: 813868200}
   - component: {fileID: 813868199}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +845,7 @@ GameObject:
   - component: {fileID: 1054778851}
   - component: {fileID: 1054778852}
   - component: {fileID: 1054778853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,11 +861,12 @@ Transform:
   m_GameObject: {fileID: 1054778850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.84, z: 0}
+  m_LocalPosition: {x: -2.02, y: 7.77, z: -0.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 721057311}
+  - {fileID: 187771917}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1054778852
@@ -831,8 +881,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b195df9adad3040a2448ff25ff8dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
+  jumpForce: 20
+  jumps: 2
   CameraDirection: {fileID: 330585546}
+  groundChecker: {fileID: 187771918}
   rb: {fileID: 1054778853}
 --- !u!54 &1054778853
 Rigidbody:
@@ -842,7 +895,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054778850}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1063,14 +1116,14 @@ MonoBehaviour:
   Orbits:
     Top:
       Radius: 5
-      Height: 3
+      Height: 5
     Center:
       Radius: 5
       Height: 3
     Bottom:
       Radius: 5
-      Height: 3
-    SplineCurvature: 0.5
+      Height: 1.27
+    SplineCurvature: 0
   RecenteringTarget: 2
   HorizontalAxis:
     Value: 0
@@ -1083,9 +1136,9 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 0
+    Value: 39.14
     Center: 0
-    Range: {x: 0, y: 0}
+    Range: {x: -10, y: 45}
     Wrap: 0
     Recentering:
       Enabled: 0
@@ -1153,8 +1206,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662957361}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09853764, y: 0.000000048337906, z: -0.0000000038725467, w: 0.99513334}
-  m_LocalPosition: {x: 0, y: 4.84, z: -5}
+  m_LocalRotation: {x: 0.24033225, y: -2.7128955e-15, z: 5.0880443e-16, w: 0.9706907}
+  m_LocalPosition: {x: -2.02, y: 12.407574, z: -5.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
