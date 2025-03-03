@@ -32,7 +32,7 @@ public class InputController : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Dash")) {
-            OnSpacePressed?.Invoke();
+            OnDashPressed?.Invoke();
         }
 
         if (Input.GetButtonDown("Exit")) {

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] 
-    private float maxSpeed, accelerationTime, jumpHeight, playerGravity;
+    private float maxSpeed, dashSpeed, accelerationTime, jumpHeight, playerGravity;
     [SerializeField]
     private int jumps;
     [SerializeField]
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     void Start() {
         InputController.instance.OnMove.AddListener(HorizontalPlanePlayerMovement);
         InputController.instance.OnSpacePressed.AddListener(Jump);
+        InputController.instance.OnDashPressed.AddListener(OnDash);
 
         rb = GetComponent<Rigidbody>();
 
@@ -47,6 +48,10 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         rb.linearVelocity = PlayerGravityHandler() + HorizontalPlaneVelocity;
+    }
+
+    private void OnDash() {
+        //rb.AddForce(dashSpeed*HorizontalPlaneVelocity);
     }
 
     private void HorizontalPlanePlayerMovement(Vector3 dir) {
