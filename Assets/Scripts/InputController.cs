@@ -23,7 +23,7 @@ public class InputController : MonoBehaviour {
     void Update() {
         Vector3 moveDir = Input.GetAxis("Horizontal")*Vector3.right + Input.GetAxis("Vertical")*Vector3.forward;
 
-        OnMove?.Invoke(moveDir);
+        OnMove?.Invoke(moveDir.normalized);
 
         if (Input.GetButtonDown("Jump")) {
             OnSpacePressed?.Invoke();
