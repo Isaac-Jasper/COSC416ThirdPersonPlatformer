@@ -9,6 +9,8 @@ public class InputController : MonoBehaviour {
     public UnityEvent<Vector3> OnMove = new UnityEvent<Vector3>();
     public UnityEvent OnSpacePressed = new UnityEvent();
     public UnityEvent OnDashPressed = new UnityEvent();
+    public UnityEvent OnExitPressed = new UnityEvent();
+    public UnityEvent OnMouse0Pressed = new UnityEvent();
     public UnityEvent OnResetPressed = new UnityEvent();
 
     void Awake() {
@@ -31,6 +33,14 @@ public class InputController : MonoBehaviour {
 
         if (Input.GetButtonDown("Dash")) {
             OnSpacePressed?.Invoke();
+        }
+
+        if (Input.GetButtonDown("Exit")) {
+            OnExitPressed?.Invoke();
+        }
+
+        if (Input.GetButtonDown("Mouse0")) {
+            OnMouse0Pressed?.Invoke();
         }
 
         if (Input.GetButtonDown("Reset")) {

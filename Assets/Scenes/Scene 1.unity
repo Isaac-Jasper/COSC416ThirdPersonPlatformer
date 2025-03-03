@@ -254,8 +254,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24033228, y: -2.7558562e-15, z: 6.8231945e-16, w: 0.9706907}
-  m_LocalPosition: {x: -2.02, y: 12.407574, z: -5.61}
+  m_LocalRotation: {x: 0.3051775, y: 0.000000017423009, z: -0.000000005583467, w: 0.95229554}
+  m_LocalPosition: {x: -2.02, y: 14.77, z: -7.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -568,6 +568,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721057310}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &747482390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 747482392}
+  - component: {fileID: 747482391}
+  m_Layer: 0
+  m_Name: CursorLocker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &747482391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747482390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7884d3dceb73db14ba850b618bb6a2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &747482392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747482390}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780263408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1134,7 +1178,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         LegacyInput: Mouse X
-        LegacyGain: 100
+        LegacyGain: 300
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -1145,7 +1189,7 @@ MonoBehaviour:
       Enabled: 1
       Input:
         LegacyInput: Mouse Y
-        LegacyGain: -100
+        LegacyGain: -300
         CancelDeltaTime: 0
       InputValue: 0
       Driver:
@@ -1230,8 +1274,8 @@ MonoBehaviour:
   Radius: 10
   Orbits:
     Top:
-      Radius: 5
-      Height: 5
+      Radius: 7
+      Height: 7
     Center:
       Radius: 5
       Height: 3
@@ -1251,7 +1295,7 @@ MonoBehaviour:
       Time: 2
     Restrictions: 0
   VerticalAxis:
-    Value: 39.14
+    Value: 45
     Center: 0
     Range: {x: -10, y: 45}
     Wrap: 0
@@ -1321,8 +1365,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662957361}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24033225, y: -2.7128955e-15, z: 5.0880443e-16, w: 0.9706907}
-  m_LocalPosition: {x: -2.02, y: 12.407574, z: -5.61}
+  m_LocalRotation: {x: 0.30517745, y: 0.000000017423007, z: -0.0000000055834644, w: 0.95229554}
+  m_LocalPosition: {x: -2.02, y: 14.77, z: -7.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1366,6 +1410,12 @@ MonoBehaviour:
   OnDashPressed:
     m_PersistentCalls:
       m_Calls: []
+  OnExitPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnMouse0Pressed:
+    m_PersistentCalls:
+      m_Calls: []
   OnResetPressed:
     m_PersistentCalls:
       m_Calls: []
@@ -1389,6 +1439,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1144052522}
+  - {fileID: 747482392}
   - {fileID: 1987584213}
   - {fileID: 330585546}
   - {fileID: 1662957367}

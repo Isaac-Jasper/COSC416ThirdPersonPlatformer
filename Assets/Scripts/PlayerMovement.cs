@@ -16,14 +16,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private float jumpStartHeight, fallStartHeight;
     private Vector3 HorizontalPlaneVelocity;
-
-    
-
     private int jumpsRemaining;
-
-    
-
-
     private float currentMoveTime = 0;
     private bool doJump = false;
     private bool doMove = false;
