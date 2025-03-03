@@ -1941,17 +1941,26 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.34411776
-      value: 0.91852164
-      inSlope: 1.8579118
-      outSlope: 1.8579118
+      time: 0.3707822
+      value: 0.7827774
+      inSlope: 1.05113
+      outSlope: 1.05113
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.13658352
     - serializedVersion: 3
-      time: 1
-      value: 1.5
+      time: 1.4431478
+      value: 1.8578366
+      inSlope: 0.40017137
+      outSlope: 0.40017137
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.6261377
+    - serializedVersion: 3
+      time: 3.305252
+      value: 2.4408722
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1963,6 +1972,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   CameraTransform: {fileID: 330585546}
   groundChecker: {fileID: 187771918}
+  roofChecker: {fileID: 1361488370}
   rb: {fileID: 1054778853}
 --- !u!54 &1054778853
 Rigidbody:
@@ -2136,7 +2146,7 @@ Transform:
   m_GameObject: {fileID: 1361488368}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.708, z: 0}
+  m_LocalPosition: {x: 0, y: 0.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2151,11 +2161,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1361488368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06e17ae850b41444b33adbb54b23b06, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fcc6f88fe4435741b34f9b164fdaad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.4
-  jumpMask:
+  radius: 0.47
+  BonkMask:
     serializedVersion: 2
     m_Bits: 8
 --- !u!1 &1445359874

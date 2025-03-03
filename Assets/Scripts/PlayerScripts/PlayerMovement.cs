@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField]
     GroundChecker groundChecker;
     [SerializeField]
+    RoofChecker roofChecker;
+    [SerializeField]
     private Rigidbody rb;
 
     private float jumpStartHeight, fallStartHeight;
@@ -76,6 +78,9 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Jump() {
         if (jumpsRemaining > 0) {
+            if (jumpsRemaining == jumps && !groundChecker.IsGrounded()) {
+                jumpsRemaining--; //already fell offa platform
+            }
             jumpsRemaining--;
             doJump = true;
             jumpStartHeight = transform.position.y;
@@ -87,6 +92,11 @@ public class PlayerMovement : MonoBehaviour {
         if (groundChecker.IsGrounded()) { 
             fallStartHeight = transform.position.y;
             jumpsRemaining = jumps;
+        }
+
+        if (roofChecker.DidBonk()) { 
+            fallStartHeight = transform.position.y;
+            doJump = false; 
         }
     }
 }
